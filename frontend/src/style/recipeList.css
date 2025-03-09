@@ -1,88 +1,103 @@
 /* RecipeList.css */
 
 .recipe-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .recipe-list h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .recipes-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .recipe-square {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #535353;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .recipe-square:hover {
-    transform: translateY(-5px);
-  }
-  
-  .recipe-square img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .recipe-square h3 {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .popup-content {
-    background-color: #928f8f;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    position: relative;
-  }
-  
-  .popup button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background-color: #FF6347;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .popup button:hover {
-    background-color: #c94c3d;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;  /* Prevent excessive width */
+  margin: 0 auto;
+}
+
+.recipe-list h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Center the recipe grid and allow wrapping */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Center grid items */
+  width: 100%;
+  max-width: 1100px;  /* Set a maximum width */
+}
+
+/* Square Styling */
+.recipe-square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #464545;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;  /* Set a fixed width */
+  height: 220px; /* Set a fixed height */
+  text-align: center;
+}
+
+.recipe-square:hover {
+  transform: translateY(-5px);
+}
+
+/* Image inside the square */
+.recipe-square img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.recipe-square h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Popup Overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Content */
+.popup-content {
+  background-color: #969090;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* Close button in popup */
+.popup button {
+  position: absolute;
+  bottom: 10px;  /* Move button to the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #c94c3d;
+}
