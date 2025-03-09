@@ -1,0 +1,106 @@
+/* Floating Plus Button */
+.add-recipe-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add-recipe-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Popup Overlay */
+  .add-recipe-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Popup Content */
+  .add-recipe-content {
+    background: rgb(131, 130, 130);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px; /* Centered and properly sized */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center; /* Center text */
+  }
+  
+  /* Centering the form */
+  .add-recipe-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Input Fields */
+  .add-recipe-content input,
+  .add-recipe-content textarea {
+    background-color: rgb(75, 89, 102);
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Center text inside input fields */
+    font-size: 16px;
+  }
+  
+  /* Buttons Container */
+  .add-recipe-content .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 15px;
+  }
+  
+  /* Buttons */
+  .add-recipe-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 16px;
+  }
+  
+  /* Submit Button */
+  .add-recipe-content .submit-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .add-recipe-content .submit-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Close Button */
+  .add-recipe-content .close-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .add-recipe-content .close-btn:hover {
+    background-color: #c82333;
+  }
+  
