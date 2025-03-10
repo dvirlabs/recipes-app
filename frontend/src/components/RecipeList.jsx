@@ -10,7 +10,8 @@ function RecipeList() {
   const fetchRecipes = () => {
     fetch("http://localhost:8000/recipes")
       .then((response) => response.json())
-      .then((data) => setRecipes(data));
+      .then((data) => setRecipes(data))
+      .catch((error) => console.error("Error fetching recipes:", error));
   };
 
   useEffect(() => {
@@ -46,7 +47,6 @@ function RecipeList() {
         </div>
       )}
 
-      {/* Add Recipe Button & Popup */}
       <AddRecipe onRecipeAdded={fetchRecipes} />
     </div>
   );

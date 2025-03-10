@@ -16,3 +16,4 @@ def get_recipes() -> List[Dict]:
 def add_recipe(recipe: Dict):
     recipes_collection.insert_one(recipe)
     return {"message": "Recipe added!"}
+

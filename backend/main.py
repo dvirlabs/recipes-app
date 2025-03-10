@@ -19,8 +19,10 @@ app.add_middleware(
 class Recipe(BaseModel):
     name: str
     pic: str
-    ingrids: Dict[str, str]  # Example: {"Sugar": "2 tsp", "Flour": "200g"}
-    steps: Dict[str, str]  # Example: {"step 1": "Mix ingredients", "step 2": "Bake at 180C"}
+    prep_time: str  # Add preparation time field
+    ingrids: Dict[str, str]
+    steps: Dict[str, str]
+  # Example: {"step 1": "Mix ingredients", "step 2": "Bake at 180C"}
 
 @app.get("/recipes", response_model=List[Recipe])
 async def get_recipes():
@@ -28,7 +30,9 @@ async def get_recipes():
 
 @app.post("/recipes")
 async def add_recipe(recipe: Recipe):
-    return db_utils.add_recipe(recipe.dict())
+    db_utils.add_recipe(recipe.dict())
+    return {"message": "Recipe added!"}
+
 
 
 if __name__ == "__main__":

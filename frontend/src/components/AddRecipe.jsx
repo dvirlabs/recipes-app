@@ -6,6 +6,7 @@ function AddRecipe({ onRecipeAdded }) {
   const [recipe, setRecipe] = useState({
     name: "",
     pic: "",
+    prep_time: "",
     ingrids: "",
     steps: "",
   });
@@ -25,10 +26,10 @@ function AddRecipe({ onRecipeAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Convert ingredients and steps to the correct format
     const formattedRecipe = {
       name: recipe.name,
       pic: recipe.pic,
+      prep_time: recipe.prep_time,
       ingrids: recipe.ingrids.split("\n").reduce((acc, line, i) => {
         acc[`ingredient ${i + 1}`] = line;
         return acc;
@@ -61,12 +62,10 @@ function AddRecipe({ onRecipeAdded }) {
 
   return (
     <>
-      {/* Floating Plus Button */}
       <button className="add-recipe-btn" onClick={togglePopup}>
         +
       </button>
 
-      {/* Popup Form */}
       {showPopup && (
         <div className="add-recipe-popup">
           <div className="add-recipe-content">
@@ -85,6 +84,14 @@ function AddRecipe({ onRecipeAdded }) {
                 name="pic"
                 placeholder="Image URL"
                 value={recipe.pic}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="prep_time"
+                placeholder="Preparation Time"
+                value={recipe.prep_time}
                 onChange={handleChange}
                 required
               />
