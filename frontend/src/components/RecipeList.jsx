@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
-import RecipeCard from './RecipeCard';
+import RecipeCard from "./RecipeCard";
+import AddRecipe from "./AddRecipe";
 import "../style/recipeList.css";
 
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
+  const fetchRecipes = () => {
+    fetch("http://localhost:8000/recipes")
+      .then((response) => response.json())
+      .then((data) => setRecipes(data))
+      .catch((error) => console.error("Error fetching recipes:", error));
+  };
+
   useEffect(() => {
-    fetch("http://localhost:8000/recipes") // Make sure the URL matches your FastAPI endpoint
-      .then(response => response.json())
-      .then(data => setRecipes(data));
+    fetchRecipes();
   }, []);
 
   const handleClick = (recipe) => {
@@ -22,21 +28,11 @@ function RecipeList() {
 
   return (
     <div className="recipe-list">
-      <h1>Recipe List</h1> {/* Title added here */}
+      <h1>Recipe List</h1>
       <div className="recipes-grid">
         {recipes.map((recipe, index) => (
-          <div
-            key={index}
-            className="recipe-square"
-            onClick={() => handleClick(recipe)}
-          >
-            <img
-              src={recipe.pic}  // Using pic field from MongoDB
-              alt={recipe.name}
-              width={30}
-              height={30}
-              style={{ borderRadius: "50%" }}
-            />
+          <div key={index} className="recipe-square" onClick={() => handleClick(recipe)}>
+            <img src={recipe.pic} alt={recipe.name} />
             <h3>{recipe.name}</h3>
           </div>
         ))}
@@ -45,11 +41,13 @@ function RecipeList() {
       {selectedRecipe && (
         <div className="popup">
           <div className="popup-content">
+            <button onClick={closePopup}>Close</button>
             <RecipeCard recipe={selectedRecipe} />
           </div>
-            <button onClick={closePopup}>Close</button>
         </div>
       )}
+
+      <AddRecipe onRecipeAdded={fetchRecipes} />
     </div>
   );
 }
