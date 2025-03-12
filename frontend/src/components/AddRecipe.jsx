@@ -13,6 +13,16 @@ function AddRecipe({ onRecipeAdded }) {
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
+    if (!showPopup) {
+      // Reset form when opening popup
+      setRecipe({
+        name: "",
+        pic: "",
+        prep_time: "",
+        ingrids: "",
+        steps: "",
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -51,6 +61,14 @@ function AddRecipe({ onRecipeAdded }) {
 
       if (response.ok) {
         onRecipeAdded();
+        // ✅ Reset form after successful submission
+        setRecipe({
+          name: "",
+          pic: "",
+          prep_time: "",
+          ingrids: "",
+          steps: "",
+        });
         togglePopup();
       } else {
         console.error("Failed to add recipe");
