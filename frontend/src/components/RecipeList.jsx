@@ -28,7 +28,7 @@ function RecipeList() {
 
   return (
     <div className="recipe-list">
-      <h1>Recipe List</h1>
+      <h1>רשימת מתכונים</h1>
       <div className="recipes-grid">
         {recipes.map((recipe, index) => (
           <div key={index} className="recipe-square" onClick={() => handleClick(recipe)}>
@@ -41,7 +41,7 @@ function RecipeList() {
       {selectedRecipe && (
         <div className="popup">
           <div className="popup-content">
-            <button onClick={closePopup}>Close</button>
+            <button onClick={closePopup}>סגור</button>
             <RecipeCard recipe={selectedRecipe} />
           </div>
         </div>
