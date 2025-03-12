@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: right;
     text-align: right;
+    direction: rtl;
   }
   
   .recipe-card img {
