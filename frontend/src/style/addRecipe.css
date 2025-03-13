@@ -83,6 +83,18 @@
     width: 48%;
     font-size: 16px;
   }
+
+  .add-recipe-content .input-group svg {
+    font-size: 45px; /* Adjust size of the icon */
+    color: #ffffff; /* Change color */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+    margin-top: 8px;
+  }
+  .add-recipe-content .input-group svg:hover {
+    color: #007bff; /* Change color on hover */
+    font-size: 50px;
+  }
   
   /* Submit Button */
   .add-recipe-content .submit-btn {
@@ -156,3 +168,15 @@
     list-style: none;
   }
   
+  .cancel-icon {
+    font-size: 30px;
+    padding: 5px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .cancel-icon:hover {
+    color: #ff0019;
+    font-size: 40px;
+  }

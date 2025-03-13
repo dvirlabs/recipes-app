@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../style/addRecipe.css";
+import { FaRegSquarePlus } from "react-icons/fa6";
+import { GiCancel } from "react-icons/gi";
 
 function AddRecipe({ onRecipeAdded }) {
   const [showPopup, setShowPopup] = useState(false);
@@ -157,11 +159,16 @@ function AddRecipe({ onRecipeAdded }) {
               />
 
               {/* כפתור העלאת תמונה */}
+              <label htmlFor="file-upload" className="custom-file-upload">
+                בחר תמונה
+              </label>
               <input
+                id="file-upload"
                 type="file"
                 accept="image/*"
                 onChange={handleFileChange}
                 required
+                style={{ display: "none" }} // הסתרת ה-input המקורי
               />
 
               {recipe.pic && <img src={recipe.pic} alt="תצוגה מקדימה" width="100" />}
@@ -188,12 +195,12 @@ function AddRecipe({ onRecipeAdded }) {
                   value={recipe.ingridsText || ""}
                   onChange={handleChange}
                 />
-                <button type="button" onClick={addIngredient}>➕</button>
+                  <FaRegSquarePlus onClick={addIngredient}/> {/* הוספת האייקון */}
               </div>
               <ul>
                 {recipe.ingrids.map((item, index) => (
                   <li key={index}>
-                    {item} <button type="button" onClick={() => removeIngredient(index)}>❌</button>
+                    {item} <GiCancel className="cancel-icon" onClick={() => removeIngredient(index)} />
                   </li>
                 ))}
               </ul>
@@ -208,12 +215,12 @@ function AddRecipe({ onRecipeAdded }) {
                   value={recipe.stepsText || ""}
                   onChange={handleChange}
                 />
-                <button type="button" onClick={addStep}>➕</button>
+                  <FaRegSquarePlus onClick={addStep}/> {/* הוספת האייקון */}
               </div>
               <ol>
                 {recipe.steps.map((item, index) => (
                   <li key={index}>
-                    {item} <button type="button" onClick={() => removeStep(index)}>❌</button>
+                    {item} <GiCancel className="cancel-icon" onClick={() => removeStep(index)} />
                   </li>
                 ))}
               </ol>
