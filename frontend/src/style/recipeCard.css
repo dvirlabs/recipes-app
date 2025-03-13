@@ -60,4 +60,9 @@
   .recipe-card button:hover {
     background-color: #0056b3;
   }
+
+  .icon {
+    font-size: 30px;
+    margin-right: 10px;
+  }
   
