@@ -30,8 +30,10 @@
 /* Square Styling */
 .recipe-square {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
+  justify-content: center;  /* Ensures content stays centered */
   background-color: #464545;
   padding: 15px;
   border-radius: 10px;
@@ -100,4 +102,19 @@
 
 .popup button:hover {
   background-color: #c94c3d;
+}
+
+.delete-btn {
+  position: absolute;  /* Position it absolutely within the recipe-square */
+  top: 10px;  /* Adjust the top distance from the top edge */
+  right: 10px;  /* Adjust the right distance from the right edge */
+  color: #c03c2e;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 35px;  /* Adjust the size if necessary */
+}
+
+.delete-btn:hover {
+  color: #e22c1c;  /* Darker shade for hover effect */
+  font-size: 40px;
 }

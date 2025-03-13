@@ -52,6 +52,14 @@ async def upload_file(file: UploadFile = File(...)):
 
     return JSONResponse(content={"imageUrl": f"http://localhost:8000/{file_location}"})
 
+@app.delete("/recipes/{recipe_name}")
+async def delete_recipe(recipe_name: str):
+    result = db_utils.delete_recipe(recipe_name)
+    if result.deleted_count == 0:
+        return JSONResponse(status_code=404, content={"message": "Recipe not found"})
+    return {"message": "Recipe deleted"}
+
+
 
 
 if __name__ == "__main__":
