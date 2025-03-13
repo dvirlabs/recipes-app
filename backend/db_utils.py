@@ -17,3 +17,8 @@ def add_recipe(recipe: Dict):
     recipes_collection.insert_one(recipe)
     return {"message": "Recipe added!"}
 
+# Function to delete a recipe by name
+def delete_recipe(recipe_name: str):
+    result = recipes_collection.delete_one({"name": recipe_name})
+    return result
+
