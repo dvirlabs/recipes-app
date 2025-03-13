@@ -1,8 +1,5 @@
 /* RecipeList.css */
 
-/* Existing styles ... */
-
-/* RecipeList styling */
 .recipe-list {
   display: flex;
   flex-direction: column;
