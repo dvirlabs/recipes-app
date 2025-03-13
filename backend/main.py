@@ -59,6 +59,15 @@ async def delete_recipe(recipe_name: str):
         return JSONResponse(status_code=404, content={"message": "Recipe not found"})
     return {"message": "Recipe deleted"}
 
+@app.put("/recipes/{recipe_name}")
+async def update_recipe(recipe_name: str, recipe: Recipe):
+    result = db_utils.update_recipe(recipe_name, recipe.dict())
+    if result.modified_count == 0:
+        return JSONResponse(status_code=404, content={"message": "Recipe not found"})
+    return {"message": "Recipe updated successfully"}
+
+
+
 
 
 

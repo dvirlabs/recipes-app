@@ -22,3 +22,13 @@ def delete_recipe(recipe_name: str):
     result = recipes_collection.delete_one({"name": recipe_name})
     return result
 
+# Function to update a recipe by name
+def update_recipe(recipe_name: str, updated_recipe: Dict):
+    result = recipes_collection.update_one(
+        {"name": recipe_name},
+        {"$set": updated_recipe}
+    )
+    return result
+
+
+

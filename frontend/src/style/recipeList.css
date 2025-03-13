@@ -64,7 +64,8 @@
 }
 
 /* Popup Overlay */
-.popup {
+.popup,
+.edit-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -74,10 +75,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 /* Popup Content */
-.popup-content {
+.popup-content,
+.edit-popup-content {
   background-color: #969090;
   padding: 20px;
   border-radius: 10px;
@@ -87,7 +90,8 @@
 }
 
 /* Close button in popup */
-.popup button {
+.popup button,
+.edit-popup button {
   position: absolute;
   bottom: 10px;  /* Move button to the bottom */
   left: 50%;
@@ -100,10 +104,98 @@
   cursor: pointer;
 }
 
-.popup button:hover {
+.popup button:hover,
+.edit-popup button:hover {
   background-color: #c94c3d;
 }
 
+/* Edit Recipe Form Styles */
+.edit-btn {
+  position: absolute;  /* Position it absolutely within the recipe-square */
+  top: 15px;  /* Adjust the top distance from the top edge */
+  left: 10px;  /* Adjust the right distance from the right edge */
+  color: #bb7321;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 30px;  /* Adjust the size if necessary */
+}
+
+.edit-btn:hover {
+  color: #c5840a;  /* Darker shade for hover effect */
+  font-size: 40px;
+}
+
+.edit-popup-content {
+  background-color: #494949;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.edit-popup-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-popup-content input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #5f5d5d;
+  border-radius: 5px;
+  background-color: #9c9c9c;
+}
+
+.edit-popup-content input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.edit-popup-content button {
+  background-color: #4CAF50;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-popup-content button[type="button"] {
+  background-color: #f44336;
+}
+
+.edit-popup-content button:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  gap: 10px;
+}
+
+ul li input {
+  width: 75%;
+}
+
+ul li button {
+  background-color: transparent;
+  color: red;
+  border: none;
+  cursor: pointer;
+}
+
+/* Delete button inside the recipe square */
 .delete-btn {
   position: absolute;  /* Position it absolutely within the recipe-square */
   top: 10px;  /* Adjust the top distance from the top edge */
@@ -111,10 +203,10 @@
   color: #c03c2e;
   cursor: pointer;
   padding: 5px;
-  font-size: 35px;  /* Adjust the size if necessary */
+  font-size: 37px;  /* Adjust the size if necessary */
 }
 
 .delete-btn:hover {
   color: #e22c1c;  /* Darker shade for hover effect */
-  font-size: 40px;
+  font-size: 42px;
 }
