@@ -9,7 +9,128 @@
   width: 100%;
   max-width: 1200px;  /* Prevent excessive width */
   margin: 0 auto;
+}/* RecipeList.css */
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;  /* Prevent excessive width */
+  margin: 0 auto;
 }
+
+.recipe-list h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Center the recipe grid and allow wrapping */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Center grid items */
+  width: 100%;
+  max-width: 1100px;  /* Set a maximum width */
+}
+
+/* Square Styling */
+.recipe-square {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* Ensures content stays centered */
+  background-color: #464545;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;  /* Set a fixed width */
+  height: 220px; /* Set a fixed height */
+  text-align: center;
+}
+
+.recipe-square:hover {
+  transform: translateY(-5px);
+}
+
+/* Image inside the square */
+.recipe-square img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.recipe-square h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Delete button inside the recipe square */
+.delete-btn {
+  position: absolute;  /* Position it absolutely within the recipe-square */
+  top: 10px;  /* Adjust the top distance from the top edge */
+  right: 10px;  /* Adjust the right distance from the right edge */
+  color: #c03c2e;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 37px;  /* Adjust the size if necessary */
+}
+
+.delete-btn:hover {
+  color: #e22c1c;  /* Darker shade for hover effect */
+  font-size: 42px;
+}
+
+/* Popup Overlay for Recipe Details */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Popup Content for Recipe Details */
+.popup-content {
+  background-color: #969090;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Close button in popup */
+.popup button {
+  position: absolute;
+  bottom: 10px;  /* Move button to the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #c94c3d;
+}
+
 
 .recipe-list h1 {
   font-size: 2rem;

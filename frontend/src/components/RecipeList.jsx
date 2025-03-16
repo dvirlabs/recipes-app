@@ -6,6 +6,7 @@ import { GiTrashCan } from "react-icons/gi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Confirmation from "./ConfirmDialog";
+import EditRecipe from "./EditRecipe";  // Import the new component
 
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
@@ -36,12 +37,12 @@ function RecipeList() {
   };
 
   const handleEditClick = (recipe) => {
-    setEditRecipe({ ...recipe });  // Pass the current recipe details for editing
+    setEditRecipe({ ...recipe });
   };
 
   const closePopup = () => {
     setSelectedRecipe(null);
-    setEditRecipe(null); // Close edit popup when done
+    setEditRecipe(null);
   };
 
   const handleDeleteClick = (recipeName) => {
@@ -70,8 +71,8 @@ function RecipeList() {
     })
       .then((response) => {
         if (response.ok) {
-          fetchRecipes(); // Refresh the recipe list
-          setEditRecipe(null); // Close the edit form
+          fetchRecipes();
+          setEditRecipe(null);
         } else {
           console.error("Error updating recipe");
         }
@@ -132,89 +133,12 @@ function RecipeList() {
       )}
 
       {/* Edit Recipe Popup */}
-      {editRecipe && (
-        <div className="edit-popup">
-          <div className="edit-popup-content">
-            <h2>ערוך מתכון</h2>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleEditSubmit(editRecipe);
-              }}
-            >
-              <input
-                type="text"
-                name="name"
-                value={editRecipe.name}
-                onChange={(e) =>
-                  setEditRecipe({ ...editRecipe, name: e.target.value })
-                }
-                placeholder="שם המתכון"
-              />
-              <input
-                type="text"
-                name="pic"
-                value={editRecipe.pic}
-                onChange={(e) =>
-                  setEditRecipe({ ...editRecipe, pic: e.target.value })
-                }
-                placeholder="תמונה"
-              />
-              <input
-                type="number"
-                name="prep_time"
-                value={editRecipe.prep_time}
-                onChange={(e) =>
-                  setEditRecipe({ ...editRecipe, prep_time: e.target.value })
-                }
-                placeholder="זמן הכנה"
-              />
-              <label>🛒 מרכיבים</label>
-              <ul>
-                {editRecipe.ingrids.map((ingredient, index) => (
-                  <li key={index}>
-                    <input
-                      type="text"
-                      value={ingredient}
-                      onChange={(e) =>
-                        setEditRecipe({
-                          ...editRecipe,
-                          ingrids: editRecipe.ingrids.map((item, i) =>
-                            i === index ? e.target.value : item
-                          ),
-                        })
-                      }
-                    />
-                  </li>
-                ))}
-              </ul>
-              <label>👩‍🍳 שלבים</label>
-              <ul>
-                {editRecipe.steps.map((step, index) => (
-                  <li key={index}>
-                    <input
-                      type="text"
-                      value={step}
-                      onChange={(e) =>
-                        setEditRecipe({
-                          ...editRecipe,
-                          steps: editRecipe.steps.map((item, i) =>
-                            i === index ? e.target.value : item
-                          ),
-                        })
-                      }
-                    />
-                  </li>
-                ))}
-              </ul>
-              <button type="submit">שמור שינויים</button>
-              <button type="button" onClick={closePopup}>
-                סגור
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+      <EditRecipe
+        editRecipe={editRecipe}
+        setEditRecipe={setEditRecipe}
+        handleEditSubmit={handleEditSubmit}
+        closePopup={closePopup}
+      />
 
       <AddRecipe onRecipeAdded={fetchRecipes} />
     </div>
