@@ -1,8 +1,18 @@
 from pymongo import MongoClient
 from typing import List, Dict
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+mongo_url = os.getenv("MONGO_URL")
+# mongo_username = os.getenv("MONGO_USERNAME")
+# mongo_password = os.getenv("MONGO_PASSWORD")
+
 
 # MongoDB connection
-MONGO_URI = "mongodb://admin:Aa123456@192.168.10.109:27017/"
+MONGO_URI = "mongodb://localhost:27017/recipe_db"
 client = MongoClient(MONGO_URI)
 db = client.recipe_db
 recipes_collection = db.recipes
