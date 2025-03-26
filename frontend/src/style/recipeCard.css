@@ -3,9 +3,9 @@
 .recipe-card {
     width: 92%;
     height: 500px;
-    overflow: auto;
-    scrollbar-color: #464646 #333;
-    background-color: #464646;
+    overflow-y: auto;
+    /* scrollbar-width: thin; */
+    /* scrollbar-color: #007BFF #f1f1f1; */
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
@@ -16,7 +16,21 @@
     text-align: right;
     direction: rtl;
   }
-  
+
+  .recipe-card::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .recipe-card::-webkit-scrollbar-track {
+    background: #585858;
+    border-radius: 10px;
+  }
+
+  .recipe-card::-webkit-scrollbar-thumb {
+    background: #007BFF;
+    border-radius: 10px;
+  }
+
   .recipe-card img {
     width: 100%;
     height: 200px;
