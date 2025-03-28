@@ -1,0 +1,135 @@
+/* EditRecipe.css */
+
+/* Popup Overlay for Edit Recipe */
+.edit-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Edit Recipe Popup Content */
+.edit-popup-content {
+  background-color: rgb(131, 130, 130);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+/* Centering the form */
+.edit-popup-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative; /* הכרחי כדי שהכפתורים יהיו ממוקמים נכון */
+  padding-bottom: 60px; /* שומר מקום לכפתורים */
+}
+
+/* Input Fields */
+.edit-popup-content input,
+.edit-popup-content textarea {
+  background-color: rgb(75, 89, 102);
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Buttons Container */
+.edit-popup-content .buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly; /* רווח שווה בין הכפתורים */
+  padding: 0 20px;
+}
+
+/* Buttons */
+.edit-popup-content button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 45%;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Submit Button */
+.edit-popup-content .submit-btn {
+  background-color: #28a745;
+  color: white;
+  right: 10%;
+  bottom: 10px;
+}
+
+.edit-popup-content .submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Close Button */
+.edit-popup-content .close-btn {
+  background-color: #dc3545;
+  color: white;
+  left: 10%;
+  bottom: 10%;
+}
+
+.edit-popup-content .close-btn:hover {
+  background-color: #c82333;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  accent-color: #007bff;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+ul li, ol li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  accent-color: #007bff;
+}

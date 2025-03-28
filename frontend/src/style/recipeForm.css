@@ -1,0 +1,101 @@
+/* Popup Overlay */
+.recipe-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.recipe-popup-content {
+    background: rgb(131, 130, 130);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Input Fields */
+.recipe-popup-content input,
+.recipe-popup-content textarea {
+    background-color: rgb(75, 89, 102);
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Buttons Container */
+.recipe-popup-content .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 15px;
+}
+
+/* Buttons */
+.recipe-popup-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.recipe-popup-content .submit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.recipe-popup-content .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Close Button */
+.recipe-popup-content .close-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.recipe-popup-content .close-btn:hover {
+    background-color: #c82333;
+}
+
+/* List Styling */
+ul, ol {
+    padding: 0;
+}
+
+ul li, ol li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+/* Delete Ingredient Button */
+.cancel-icon {
+    font-size: 30px;
+    padding: 5px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cancel-icon:hover {
+    color: #ff0019;
+    font-size: 40px;
+}
