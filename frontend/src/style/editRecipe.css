@@ -20,19 +20,36 @@
   padding: 20px;
   border-radius: 10px;
   width: 90%;
+  height: 90%;
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.edit-popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.edit-popup-content::-webkit-scrollbar-track {
+  background: #585858;
+  border-radius: 10px;
+}
+
+.edit-popup-content::-webkit-scrollbar-thumb {
+  background: #007BFF;
+  border-radius: 10px;
 }
 
 /* Centering the form */
 .edit-popup-content form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  position: relative; /* הכרחי כדי שהכפתורים יהיו ממוקמים נכון */
-  padding-bottom: 60px; /* שומר מקום לכפתורים */
+  align-items: center;
+  position: relative;
+  padding-bottom: 20px; /* ריווח לתחתית */
 }
 
 /* Input Fields */
@@ -48,15 +65,20 @@
   font-size: 16px;
 }
 
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  accent-color: #007bff;
+}
+
 /* Buttons Container */
 .edit-popup-content .buttons {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
   display: flex;
-  justify-content: space-evenly; /* רווח שווה בין הכפתורים */
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 15px;
   padding: 0 20px;
+  position: relative;
 }
 
 /* Buttons */
@@ -65,7 +87,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 45%;
+  width: 48%;
   font-size: 16px;
   text-align: center;
 }
@@ -74,8 +96,6 @@
 .edit-popup-content .submit-btn {
   background-color: #28a745;
   color: white;
-  right: 10%;
-  bottom: 10px;
 }
 
 .edit-popup-content .submit-btn:hover {
@@ -86,8 +106,6 @@
 .edit-popup-content .close-btn {
   background-color: #dc3545;
   color: white;
-  left: 10%;
-  bottom: 10%;
 }
 
 .edit-popup-content .close-btn:hover {
@@ -111,12 +129,6 @@
   background-color: #0056b3;
 }
 
-input[type="range"] {
-  width: 100%;
-  margin: 10px 0;
-  accent-color: #007bff;
-}
-
 ul, ol {
   padding: 0;
 }
@@ -128,6 +140,7 @@ ul li, ol li {
   list-style: none;
 }
 
+/* Range Input */
 input[type="range"] {
   width: 100%;
   margin: 10px 0;
