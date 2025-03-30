@@ -54,6 +54,7 @@ function EditRecipe({ recipe, onSave, onClose }) {
           <input
             type="text"
             name="pic"
+            className="custom-file-upload"
             value={editedRecipe.pic}
             onChange={handleChange}
             placeholder="תמונה"
@@ -93,8 +94,8 @@ function EditRecipe({ recipe, onSave, onClose }) {
             ))}
           </ul>
           <div className="buttons">
-            <button type="submit">שמור שינויים</button>
-            <button type="button" onClick={onClose}>סגור</button>
+            <button type="submit" className="submit-btn">שמור שינויים</button>
+            <button type="button" className="close-btn" onClick={onClose}>סגור</button>
           </div>
         </form>
       </div>
