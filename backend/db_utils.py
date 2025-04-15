@@ -13,9 +13,9 @@ mongo_password = os.getenv("MONGO_PASSWORD")
 
 
 # MongoDB connection
-MONGO_URI = f"mongodb://{mongo_username}:{mongo_password}@{mongo_url}/recipe_db?authSource=admin"
+MONGO_URI = f"mongodb://{mongo_username}:{mongo_password}@{mongo_url}/recipes_db?authSource=recipes_db"
 client = MongoClient(MONGO_URI)
-db = client.recipe_db
+db = client.recipes_db
 recipes_collection = db.recipes
 
 # Function to get all recipes
