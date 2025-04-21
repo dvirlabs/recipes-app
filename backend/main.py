@@ -37,7 +37,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 async def get_recipes():
     return db_utils.get_recipes()
 
-@app.post("/recipes")
+@app.post("/add_recipes")
 async def add_recipe(recipe: Recipe):
     db_utils.add_recipe(recipe.dict())
     return {"message": "Recipe added!"}

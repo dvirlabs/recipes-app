@@ -111,7 +111,7 @@ function AddRecipe({ onRecipeAdded }) {
     };
   
     try {
-      const response = await fetch("http://localhost:8000/recipes", {
+      const response = await fetch("http://localhost:8000/add_recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
